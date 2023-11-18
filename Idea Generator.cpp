@@ -1,0 +1,125 @@
+#include <iostream>
+#include <time.h>
+#include <stdlib.h> 
+using namespace std;
+
+void gameGenerator(){
+	char G;
+	char answer;
+	
+	//                  0               1           2                3             4
+	string Type[5] = {"RPG", "Interactive Story", "FPS", "Chaotically Indie", "Fast Moving"};
+	
+	string Bosses[3] = {"Simple but annoying", "Unlocked as a character afterwards", "possessing a baddass weapon"};
+	
+	int InventOrLives[4] = {3, 5, 9, 12};
+	
+
+	cout << "Welcome to the Game Idea Generator \n";
+	
+	while (answer != 'E'){
+		srand(time(NULL));
+		int randomType = (rand() % 5);
+	
+		srand(time(NULL));
+		int randomBoss = (rand() % 3);
+	
+		srand(time(NULL));
+		int randomSpaceOrLives = (rand() % 4);
+		
+		cout << " \n";
+		cout << " \n";
+		cout << "Press E to exit \n";
+		cout << " \n";
+		cout << "Press G to generate an idea \n";
+		cin >> answer;
+		cout << " \n";
+		cout << " \n";
+		
+		if (answer == 'G'){
+			cout << "The game type: " << Type[randomType] << endl;
+			cout << "If it has Final Boss(es) the boss should be " << Bosses[randomBoss] << endl;
+			cout << "The number of inventory space OR lives the character has should be " << InventOrLives[randomSpaceOrLives] << endl;
+		}
+		
+	
+	}
+}
+
+void filmGenerator(){
+	char M;
+	char answer;
+	
+	//                     0          1                 2
+	string Genre[3] = {"Horror", "Fantasy", "High School Stereotype Life"};
+	
+	int numMC[3] = { 1, 2, 0};
+	
+	string filmItem[6] = {"axe", "cherry tree", "blank tombstone", "burnt feather", "lake", "reptile scale"};
+	//                      0          1               2                 3            4            5
+	
+
+	
+	cout << "Welcome to the Film Idea Generator \n";
+
+	
+	while (answer != 'E'){
+		//idk it's not random
+		
+		srand(time(NULL));
+		int randomGenre = (rand() % 3);
+	
+		srand(time(NULL));
+		int randomNum = (rand() % 3);
+	
+		srand(time(NULL));
+		int randomItem = (rand() % 6);
+			
+	
+		cout << "(Press E to exit} \n";
+		cout << " \n";
+		cout << "Press M to generate an idea \n";
+		cin >> answer;
+		cout << " \n";
+		cout << " \n";
+	
+		if (answer == 'M'){
+			cout << "Genre: " << Genre[randomGenre] << endl;
+			cout << "The film should have " << numMC[randomNum] << " main characters \n";
+			cout << "An item that must included in the film: a(n) " << filmItem[randomItem] << endl;
+		}
+		
+		if (answer == 'E'){
+			break;
+		}
+	
+	}
+	
+}
+
+
+int main(){
+	char E, F, G;
+	char res;
+	
+	
+	while (res != 'E'){
+		cout << "Press F for the Film Idea Generator. Press G for the Game Idea Generator \n";
+		cin >> res;
+		
+		if (res == 'F'){
+			filmGenerator();
+		}
+		
+		if (res == 'G'){
+			gameGenerator();
+		}
+	}
+	
+	if (res == 'E'){
+		return 0;
+	}
+	
+	
+	return 0;
+}
