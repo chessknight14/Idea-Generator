@@ -6,9 +6,14 @@ using namespace std;
 void gameGenerator(){
 	char G;
 	char answer;
+
+	//check idea generator!
+	//see if you see this message!
 	
 	//                  0               1           2                3             4
 	string Type[5] = {"RPG", "Interactive Story", "FPS", "Chaotically Indie", "Fast Moving"};
+
+	string something;
 	
 	string Bosses[3] = {"Simple but annoying", "Unlocked as a character afterwards", "possessing a baddass weapon"};
 	
