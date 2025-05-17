@@ -55,13 +55,13 @@ void filmGenerator(){
 	char M;
 	char answer;
 	
-	//                     0          1                 2
-	string Genre[3] = {"Horror", "Fantasy", "High School Stereotype Life"};
+	//                     0          1                 2                      3
+	string Genre[5] = {"Horror", "Fantasy", "High School Stereotype Life", "Musical:(", "Ages 13-17"};
 	
 	int numMC[3] = { 1, 2, 0};
 	
-	string filmItem[6] = {"axe", "cherry tree", "blank tombstone", "burnt feather", "lake", "reptile scale"};
-	//                      0          1               2                 3            4            5
+	string filmItem[9] = {"axe", "cherry tree", "blank tombstone", "burnt feather", "piano missing keys", "reptile scale", "origami swan","warm pillow", "damp passport"};
+	//                      0          1               2                 3                      4               5               6             7                 8
 	
 
 	
@@ -72,13 +72,14 @@ void filmGenerator(){
 		//idk it's not random
 		
 		srand(time(NULL));
-		int randomGenre = (rand() % 3);
+		int randomGenre = (rand() % 5);
 	
 		srand(time(NULL));
 		int randomNum = (rand() % 3);
 	
 		srand(time(NULL));
-		int randomItem = (rand() % 6);
+		int randomItem = (rand() % 9);
+        //for film items 
 			
 	
 		cout << "(Press E to exit} \n";
@@ -90,8 +91,8 @@ void filmGenerator(){
 	
 		if (answer == 'M'){
 			cout << "Genre: " << Genre[randomGenre] << endl;
-			cout << "The film should have " << numMC[randomNum] << " main characters \n";
-			cout << "An item that must included in the film: a(n) " << filmItem[randomItem] << endl;
+			cout << "The film should have " << numMC[randomNum] << " main character(s) \n";
+			cout << "Item that must included in the film: " << filmItem[randomItem] << endl;
 		}
 		
 		if (answer == 'E'){
